@@ -1,69 +1,69 @@
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:500,700&display=swap");
-* {
-  box-sizing: border-box;
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
 }
 
-.nav {
-  position: fixed !important;
-  display: -webkit-inline-box;
-  display: inline-flex;
-  overflow: hidden;
-  max-width: 100%;
-  background-color: #fff;
-  padding: 0 20px;
-  border-radius: 40px;
-  box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
+.navbar {
+    transition: all 0.4s;
 }
 
-.nav-item {
-  color: #83818c;
-  padding: 20px;
-  text-decoration: none;
-  -webkit-transition: .3s;
-  transition: .3s;
-  margin: 0 6px;
-  z-index: 1;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  position: relative;
-}
-.nav-item:before {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #dfe2ea;
-  border-radius: 8px 8px 0 0;
-  opacity: 0;
-  -webkit-transition: .3s;
-  transition: .3s;
+.jumbotron {
+  background: none;
 }
 
-.nav-item:not(.is-active):hover:before {
-  opacity: 1;
-  bottom: 0;
+.vertical-center {
+  min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 50vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
 }
 
-.nav-item:not(.is-active):hover {
-  color: #333;
+.navbar .nav-link {
+    color: #fff;
 }
 
-.nav-indicator {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  -webkit-transition: .4s;
-  transition: .4s;
-  height: 5px;
-  z-index: 1;
-  border-radius: 8px 8px 0 0;
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
 }
 
-@media (max-width: 580px) {
-  .nav {
-    overflow: auto;
-  }
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
 }
