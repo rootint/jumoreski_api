@@ -5,12 +5,35 @@ body {
   background-size: 100%;
 }
 
-.navbar {
-    transition: all 0.4s;
+p {
+  color: #fff;
 }
 
-.jumbotron {
-  background: none;
+.navbar {
+  transition: all 0.4s;
+}
+
+.jumbotron {  
+  background: none !important;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  background: #fff;
+  width: 100%;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .jumbotron {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);  
+  }
+  .warning {
+    display: none;
+  }
 }
 
 .vertical-center {
@@ -22,48 +45,48 @@ body {
 }
 
 .navbar .nav-link {
-    color: #fff;
+  color: #fff;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .navbar .navbar-brand {
-    color: #fff;
+  color: #fff;
 }
-
 
 /* Change navbar styling on scroll */
 .navbar.active {
-    background: #fff;
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+  /*background: #fff;*/
+  background-image: url("bg1.jpg");
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.active .nav-link {
-    color: #555;
+  color: #fff;
 }
 
 .navbar.active .nav-link:hover,
 .navbar.active .nav-link:focus {
-    color: #555;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .navbar.active .navbar-brand {
-    color: #555;
+  color: #fff;
 }
 
 
 /* Change navbar styling on small viewports */
 @media (max-width: 991.98px) {
-    .navbar {
-        background: #fff;
-    }
+  .navbar {
+    background: #fff;
+  }
 
-    .navbar .navbar-brand, .navbar .nav-link {
-        color: #555;
-    }
+  .navbar .navbar-brand, .navbar .nav-link {
+    color: #555;
+  }
 }
